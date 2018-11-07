@@ -60,7 +60,7 @@ Jego plan nie powiódł się. Ziemianom, na czele z wychowanym na Ziemi Saiyanin
           if ($result->num_rows > 0) {
               // output data of each row
               while($row = $result->fetch_assoc()) {
-                  echo  '<h1>' . $row["Vegeta"]."</h1>" . $row["Goku"]."<hr>";
+                  echo  '<h1>' . $row["Vegeta"]."</h1>" ."<hr>";
               }
           } else {
               echo "0 results";
