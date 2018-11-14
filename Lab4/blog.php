@@ -1,16 +1,4 @@
-﻿<?php
-    include("connection.php");
-    $user = "root";
-    $wiadomosc = $_POST['wiadomosc'];
-    $sql = "insert into komunikator(id_w, user,wiadomosc,data_nadania) values(null, '$user','$wiadomosc',null)";
-    if (mysqli_query($conn, $sql)) {
-      echo '<div class="alert alert-success">artykuł został dodany</div>';
-    } else {
-      echo '<div class="alert alert-danger">bład dodawania artykułu: ' . mysqli_error($conn)."</div>";
-    }
-  
-    mysqli_close($conn);
-?>
+﻿
 <!DOCTYPE html>
 <html>
   <head>
@@ -30,12 +18,25 @@
   <script type ="text/javascript" src = "scripts/text.js"></script>  
   <script src = "scripts/odswiez.js"></script>
   <script >
+
+$(document).ready(function(){
+   var $form = $('form');
+   $form.submit(function(){
+      $.post($(this).attr('action'), $(this).serialize(), function(response){
+            // do something here on success
+      },'json');
+      return false;
+   });
+});
+
+
   function showMe (ele)
   {
   var xhttp = new XMLHttpRequest();
   $wiadomosc = $('#Tt').val();
   var url = "cos.php";
   var params = 'wiadomosc=' + $wiadomosc;
+  //typ http , zasob , czy asynchronicznie 
   xhttp.open("POST", url, true);
 
   xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -46,7 +47,7 @@ xhttp.onreadystatechange = function() {
        document.getElementById("komunikator").innerHTML = xhttp.responseText;
     }
 };
-
+//dane do przeslania
 xhttp.send(params);
 }
   </script>
