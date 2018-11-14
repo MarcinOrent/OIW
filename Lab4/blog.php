@@ -29,6 +29,27 @@
   crossorigin="anonymous"></script>
   <script type ="text/javascript" src = "scripts/text.js"></script>  
   <script src = "scripts/odswiez.js"></script>
+  <script >
+  function showMe (ele)
+  {
+  var xhttp = new XMLHttpRequest();
+  $wiadomosc = $('#Tt').val();
+  var url = "cos.php";
+  var params = 'wiadomosc=' + $wiadomosc;
+  xhttp.open("POST", url, true);
+
+  xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+       // Typical action to be performed when the document is ready:
+       document.getElementById("komunikator").innerHTML = xhttp.responseText;
+    }
+};
+
+xhttp.send(params);
+}
+  </script>
   </head>
   <body >
 
@@ -84,17 +105,16 @@ Jego plan nie powiódł się. Ziemianom, na czele z wychowanym na Ziemi Saiyanin
   <input type="submit" value="dodaj" /> 
 </form>
 <hr>
- id="komunikator"
+ <div id="komunikator">
   <?php
   include("showMe.php");
   ?>
+</div>
+</form>
 
-<form method = "post">
 <label for = "wiadomosc"><h1>Chat</h1></label>
-<textarea name="wiadomosc" rows ="10" cols="70" ></textarea>
-  <input type="submit" value="wyslij">
-</form>
-</form>
-        </body>
+<textarea name="wiadomosc" id="Tt" rows ="10" cols="70" ></textarea>
+  <input type="submit" value="wyslij"onclick="showMe(this)">
+</body>
   <link rel="Stylesheet" href="stylee.css"/>
 </html>
