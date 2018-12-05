@@ -4,18 +4,19 @@
   <head>
     <meta charset="utf-8">
     <title>DragonBall</title>
-       
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style/css/bootstrap.css" />
-  <link rel="stylesheet" href="style/css/bootstrap-theme.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
   <script src="scripts/js/bootstrap.js"></script>
   <meta charset="utf-8">
   <title>Dragon ball</title> 
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-  <script type ="text/javascript" src = "scripts/text.js"></script>  
+  
+  <!--<script type ="text/javascript" src = "scripts/text.js"></script>  -->
   <script src = "scripts/odswiez.js"></script>
   <script >
   
@@ -102,28 +103,24 @@ Jego plan nie powiódł się. Ziemianom, na czele z wychowanym na Ziemi Saiyanin
 			</div>
 
 
-<!-- <form action="dwa.php" method="post"> 
+
+ <form action="dwa.php" method="post"> 
   <label for = "imie">imię:</label> 
   <input type="text" name="imie" /><br /> 
   <label for = "email">email:</label>
   <input type="text" name="email" /><br /> 
-  <input type="submit" value="dodaj" />  -->
+  <input type="submit" value="dodaj" /> 
  
-</form>
+</form> 
 <h3> Zmiana emaila </h3>
-<form action="edit.php" method="post"> 
-          <label for = "imie">imię:</label> 
-  <input type="text" name="imie1" /><br /> 
-  <label for = "email">nowy email:</label>
-  <input type="text" name="email1" /><br /> 
-           <input type="submit" value="edytuj" />
-           </form>
+ <a href = "zmiana.php">zmiana</a>
            
 <center>
 <form action="deleteb.php" method="post">
 <label for = "imie">uzytkownik do usunięcia:</label>
 <input type="text" name="imie2" /><br /> 
 <input type="submit" value="USUN" /> 
+</form>
 </center>
 <?php
          include("connection.php");
@@ -141,7 +138,7 @@ Jego plan nie powiódł się. Ziemianom, na czele z wychowanym na Ziemi Saiyanin
           $conn->close();
           
           ?>
-</form>
+
 
 
 <hr>
