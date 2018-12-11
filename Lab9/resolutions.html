@@ -1,0 +1,24 @@
+
+<head>
+    
+        <script src="meteor.js"></script>
+        <link rel="stylesheet" href="resolutions.css" />
+    <title>resolutions</title>
+</head>
+<meta charset="utf-8">
+<body>
+    <div class="container">
+        <header>
+            <h1>System zmiany adresu email</h1>
+            <form class="new-resolution" action="edit.php" method="post">
+                <input type="text" name="imie4" placeholder="Twoje aktualne imie">
+                <input type="text" name="email4" placeholder="Twój nowy adres email">
+                <input type="submit" value="Zmień">
+            </form>
+        </header>
+        
+    </div>
+</body>
+<template name="resolution">
+<li>{{title}}</li>
+</template>
